@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: tahoma;
+}
+
+:root {
+    --main-color: #03a9f4a3;
+}
+
+
+/* Start Create The Game Markup  */
+
+.Game-Container {
+    text-align: center;
+    position: relative;
+    padding: 40px 0;
+    height: 100vh;
+    background: #C79777;
+    background: -webkit-radial-gradient(center, #C79777, #0D4467);
+    background: -moz-radial-gradient(center, #C79777, #0D4467);
+    background: radial-gradient(ellipse at center, #C79777, #0D4467);
+}
+
+.Game-Container>span {
+    width: 300px;
+    height: 80px;
+    background: #2196f3d1;
+    border-radius: 10px;
+    cursor: pointer;
+    line-height: 80px;
+    font-weight: bold;
+    font-size: 40px;
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    color: #ff5722;
+    letter-spacing: 3px;
+    font-family: ui-monospace;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #0b0b0bba;
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1040px;
+    height: 70px;
+    background-color: antiquewhite;
+    border: 1px solid var(--main-color);
+    margin: 20px auto;
+    font-size: 25px;
+    padding: 0 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.info .name,
+.info .tries {
+    color: var(--main-color);
+}
+
+.game {
+    max-width: 1040px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    perspective: 2000px;
+    perspective-origin: top;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.game div {
+    border: 2px solid var(--main-color);
+    text-align: center;
+    position: relative;
+    transition: .5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    flex-basis: 200px;
+    height: 170px;
+    margin-bottom: 10px;
+}
+
+.game div span {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    line-height: 170px;
+    user-select: none;
+}
+
+.game div span:first-child {
+    transform: rotateY(180deg);
+    padding-top: 3px;
+}
+
+.game div span:last-child {
+    background: black;
+    color: white;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.noClicking {
+    pointer-events: none;
+}
+
+.rotate {
+    transform: rotateY(180deg);
+}
+
+.finished {
+    transform: rotateY(180deg);
+}
+
+.Wdiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: #7fffd47a;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 200px;
+}
+
+.Span1,
+.Span2 {
+    display: block;
+    background-color: #ff5722;
+    height: 50px;
+    width: 200px;
+    border-radius: 15px;
+    line-height: 50px;
+    font-weight: bold;
+    margin-bottom: 45px;
+    color: white;
+    box-shadow: 5px 4px 12px 9px #03a9f482;
+    font-size: 17px;
+    transition: .7s;
+    transform-style: preserve-3d;
+}
+
+.Span1 {
+    cursor: no-drop;
+}
+
+.Span2 {
+    cursor: progress;
+}
+
+.Span1:hover,
+.Span2:hover {
+    letter-spacing: 7px;
+    color: initial;
+    transform: scale(1.2);
+}
+
+audio {
+    display: none;
+}
+
+.leaderBoard {
+    width: 230px;
+    height: 300px;
+    background-color: aquamarine;
+    border: 1px solid var(--main-color);
+    margin: 10px 0 0 50px;
+}
+
+.PlayerInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* End Create The Game Markup  */
